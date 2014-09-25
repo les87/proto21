@@ -6,6 +6,8 @@ Proto::Application.routes.draw do
   get "inside", to: "pages#inside", as: "inside"
   get "setup", to: "pages#setup", as:"setup"
   get "printers", to: "printers#new_printer"
+  post "printers", to: "printers#create"
+  get "view", to: "printers#index"
 
   devise_for :users
 

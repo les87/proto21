@@ -15,7 +15,7 @@ class PrintersController < ApplicationController
   end
 
   def create
-    @printer = Printer.new(printer_params)
+    @printer = Printer.create
   end
-
 end
+

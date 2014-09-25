@@ -60,6 +60,12 @@ ActiveRecord::Schema.define(version: 20140924182656) do
   add_index "installs", ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
 
   create_table "printers", force: true do |t|
+    t.string   "serial_number"
+    t.string   "asset_tag"
+    t.string   "model"
+    t.string   "printer_name"
+    t.string   "printer_location"
+    t.string   "ip_address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

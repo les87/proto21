@@ -1,3 +1,11 @@
 <h1>Add New Printers</h1>
 
-
+<%= form_for :printer do |f| %>
+    Serial Number: <%= f.text_field :serial_number %><br />
+    Asset Tag: <%= f.text_field :asset_tag %><br />
+    Model: <%= f.text_field :model %><br />
+    Printer Name: <%= f.text_field :printer_name %><br />
+    Printer Location: <%= f.text_field :printer_location %><br />
+    IP Address: <%= f.text_field :ip_address %><br />
+    <%= f.submit %>
+<% end %>
