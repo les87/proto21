@@ -14,18 +14,21 @@
 ActiveRecord::Schema.define(version: 20140924182656) do
 
   create_table "calls", primary_key: "incident_id", force: true do |t|
-    t.integer "id",               null: false
-    t.string  "engineer_id",      null: false
-    t.integer "serial_number",    null: false
-    t.text    "description",      null: false
-    t.text    "engineer_comment"
-    t.string  "status"
+    t.string   "serial_number"
+    t.text     "description"
+    t.text     "engineer_comment"
+    t.string   "status"
+    t.string   "logged_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "customer_feedback", primary_key: "feedback_id", force: true do |t|
-    t.integer "incident_id", null: false
-    t.integer "rating"
-    t.text    "description"
+    t.integer  "incident_id"
+    t.integer  "rating"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
