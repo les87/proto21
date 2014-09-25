@@ -15,7 +15,16 @@ class PrintersController < ApplicationController
   end
 
   def create
-    @printer = Printer.create
+    @printer = Printer.new(allowed_params)
+    @printer.save
+    if @printer.save
+      flash[:notice] = 'Printer saved!'
+      redirect_to setup_path
   end
 end
+end
 
+private
+def allowed_params
+  params.require(:printer).permit(:id, :serial_number, :asset_tag, :model, :printer_name, :printer_location, :ip_address)
+end
