@@ -1,0 +1,39 @@
+<h1>Printers</h1>
+
+<p><%= link_to "Add New Printers", new_printers %></p>
+
+ <table class="table table-bordered">
+  <tr>
+
+    <th>Printer ID</th>
+    <th>Serial Number</th>
+    <th>Asset Tag</th>
+    <th>Printer Name</th>
+    <th>Model</th>
+    <th>Printer Location</th>
+    <th>IP Address</th>
+
+    <% @printers.each do |printer| %>
+
+       <tr>
+         <td><%= printer.id %></td>
+         <td><%= printer.serial_number %></td>
+         <td><%= printer.asset_tag %></td>
+         <td><%= printer.printer_name %></td>
+         <td><%= printer.model %></td>
+         <td><%= printer.printer_location %></td>
+         <td><%= printer.ip_address %></td>
+
+       </tr>
+
+   <% end %>
+
+  </table>
+
+
+
+
+
+
+
+
