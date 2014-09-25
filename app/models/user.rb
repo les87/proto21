@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :invitable
+         :recoverable, :rememberable, :trackable, :confirmable, :invitable
 
   # Pagination
   paginates_per 100
@@ -55,3 +55,4 @@ class User < ActiveRecord::Base
     where("admin = ? AND locked = ?",false,false).count
   end
 end
+
