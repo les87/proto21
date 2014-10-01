@@ -1,7 +1,7 @@
 class PrintersController < ApplicationController
 
   def index
-    @printers = Printer.all
+    @printers = Printer.all.page(params[:page])
   end
 
   def show
@@ -26,5 +26,5 @@ end
 
 private
 def allowed_params
-  params.require(:printer).permit(:id, :serial_number, :asset_tag, :model, :printer_name, :printer_location, :ip_address)
+  params.require(:printer).permit(:id, :serial_number, :asset_tag, :model, :printer_name, :printer_location, :ip_address, :page)
 end

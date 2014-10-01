@@ -1,5 +1,10 @@
 <h1>View Printers</h1>
 
+<div class="text-center">
+  <p><%= page_entries_info @printers %></p>
+  <%= paginate @printers.per_page (10) %><BR>
+
+</div>
 
  <table class="table table-bordered">
   <tr>
@@ -24,6 +29,7 @@
          <td><%= printer.ip_address %></td>
 
        </tr>
+
 
    <% end %>
 
