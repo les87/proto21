@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :confirmable, :invitable
 
   # Pagination
-  paginates_per 100
+  paginates_per 25
   
   # Validations
   # :username
