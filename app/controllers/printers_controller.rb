@@ -14,6 +14,15 @@ class PrintersController < ApplicationController
   def edit
   end
 
+  def destroy
+    @printer = Printer.find(params[:id])
+    @printer.destroy
+    if @printer.destroy
+      flash[:notice] = 'Printer deleted'
+      redirect_to setup_path
+    end
+  end
+
   def create
     @printer = Printer.new(allowed_params)
     @printer.save

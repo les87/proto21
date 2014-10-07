@@ -18,8 +18,8 @@
         :address              => 'smtp.gmail.com',
         :port                 => 587,
         :domain               => 'gmail.com',
-        :user_name            => 'leslie.kifuse',
-        :password             => 'magicsex',
+        :user_name            => 'printex.test',
+        :password             => 'printex121',
         :authentication       => 'plain',
         :enable_starttls_auto => 'true'
     }

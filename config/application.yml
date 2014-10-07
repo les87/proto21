@@ -1,8 +1,8 @@
 # ENVIRONMENT VARIABLES
 DOMAIN: ""
-SENDER_EMAIL: "leslie.kifuse@gmail.com"
+SENDER_EMAIL: "printex.test@gmail.com"
 MAILER_DOMAIN: "gmail.com"
 SMTP_SERVER: "smtp.gmail.com"
 SMTP_PORT: 587
-SMTP_USER: "leslie.kifuse"
-SMTP_PWD: "magicsex"
+SMTP_USER: "printex.test"
+SMTP_PWD: "printex121"

@@ -27,6 +27,7 @@
          <td><%= printer.model %></td>
          <td><%= printer.printer_location %></td>
          <td><%= printer.ip_address %></td>
+         <td><%= link_to 'Remove', printer, :confirm => 'Are you sure?', :method => :delete %></td>
 
        </tr>
 
