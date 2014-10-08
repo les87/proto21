@@ -1,0 +1,8 @@
+<h1>Calls</h1>
+
+<%= form_for :call do |f| %>
+    Serial Number: <%= f.text_field :serial_number %><br />
+    Description: <%= f.text_field :description %><br />
+    <%= f.hidden_field :status, :value => "open" %>
+    <%= submit_tag("Submit") %>
+<% end %>

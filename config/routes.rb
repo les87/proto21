@@ -13,6 +13,7 @@ Proto::Application.routes.draw do
   devise_for :users
 
   resources :printers
+  resources :calls
   
   namespace :admin do
     root "base#index"

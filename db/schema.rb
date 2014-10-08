@@ -13,7 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20140924182656) do
 
-  create_table "calls", primary_key: "incident_id", force: true do |t|
+  create_table "calls", id: false, force: true do |t|
+    t.integer  "id",               null: false
     t.string   "serial_number"
     t.text     "description"
     t.text     "engineer_comment"
@@ -23,7 +24,9 @@ ActiveRecord::Schema.define(version: 20140924182656) do
     t.datetime "updated_at"
   end
 
-  create_table "customer_feedback", primary_key: "feedback_id", force: true do |t|
+  add_index "calls", ["serial_number"], name: "index_serial_number"
+
+  create_table "customer_feedback", force: true do |t|
     t.integer  "incident_id"
     t.integer  "rating"
     t.text     "description"
