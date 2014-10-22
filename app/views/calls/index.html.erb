@@ -5,7 +5,7 @@
     Description: <%= f.text_field :description %><br />
     <%= f.hidden_field :status, :value => "open" %>
     <%= f.hidden_field :logged_by, :value => current_user.id %>
-    <%= f.hidden_field :id, :value => rand(36**7...36**8).to_s(36)%>
+    <%= f.hidden_field :id, :value => rand(36**8) * current_user.id%>
     <%= submit_tag("Submit") %>
 
 <% end %>
