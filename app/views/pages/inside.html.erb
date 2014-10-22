@@ -2,4 +2,45 @@
 <p>Welcome to Proto</p>
 <p>Hello World</strong></p>
 
+
 <%= link_to "Calls", calls_path %>
+
+<% if current_user.engineer? %>
+<br>
+<p>Current Calls</p>
+
+    <div class="text-center">
+      <p><%= page_entries_info @calls %></p>
+      <%= paginate @calls%><BR>
+
+    </div>
+
+    <table class="table table-bordered">
+      <tr>
+
+    <tr>
+
+      <th>Call ID</th>
+      <th>Serial Number</th>
+      <th>Description</th>
+      <th>Engineer Comment</th>
+      <th>Status</th>
+      <th>Logged By</th>
+
+      <% @calls.each do |call| %>
+
+        <tr>
+          <td><%= call.id %></td>
+          <td><%= call.serial_number %></td>
+          <td><%= call.description %></td>
+          <td><%= call.engineer_comment %></td>
+          <td><%= call.status %></td>
+          <td><%= call.logged_by %></td>
+
+        </tr>
+
+
+    <% end %>
+</table>
+
+<% end %>

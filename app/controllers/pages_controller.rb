@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
   
   def inside
+    @calls = Call.all.page(params[:page])
   end
 
   def resource
@@ -15,5 +16,4 @@ class PagesController < ApplicationController
   def printer
   end
 
-    
 end
