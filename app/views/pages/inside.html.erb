@@ -8,7 +8,6 @@
 <% if current_user.engineer? %>
 <br>
 
-
     <div class="text-center">
       <p><%= page_entries_info @calls %></p>
       <%= paginate @calls%><BR>
@@ -34,14 +33,51 @@
           <td><%= call.id %></td>
           <td><%= call.serial_number %></td>
           <td><%= call.description %></td>
-          <td><%= call.engineer_comment %></td>
+          <td><%= link_to "Add comments" %></td>
           <td><%= call.status %></td>
           <td><%= call.logged_by %></td>
           <td><%= call.created_at.to_formatted_s(:long_ordinal) %></td>
-        </tr>
+          </tr>
+      <% end %>
+
+        </table>
 
 
-    <% end %>
-</table>
+
+    <% else %>
+
+    <div class="text-center">
+      <p><%= page_entries_info @calls %></p>
+      <%= paginate @calls%><BR>
+
+    </div>
+
+    <table class="table table-bordered">
+      <tr>
+
+      <tr>
+
+        <th>Call ID</th>
+        <th>Serial Number</th>
+        <th>Description</th>
+        <th>Engineer Comment</th>
+        <th>Status</th>
+        <th>Logged By User</th>
+        <th>Time Logged</th>
+
+        <% @calls.each do |call| %>
+
+          <tr>
+            <td><%= call.id %></td>
+            <td><%= call.serial_number %></td>
+            <td><%= call.description %></td>
+            <td><%= call.engineer_comment %></td>
+            <td><%= call.status %></td>
+            <td><%= call.logged_by %></td>
+            <td><%= call.created_at.to_formatted_s(:long_ordinal) %></td>
+          </tr>
+      <% end %>
+      </table>
+
 
 <% end %>
