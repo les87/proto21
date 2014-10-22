@@ -3,11 +3,11 @@
 <p>Hello World</strong></p>
 
 
-<%= link_to "Calls", calls_path %>
+<%= link_to "Book a Call", calls_path %>
 
 <% if current_user.engineer? %>
 <br>
-<p>Current Calls</p>
+
 
     <div class="text-center">
       <p><%= page_entries_info @calls %></p>
@@ -25,7 +25,8 @@
       <th>Description</th>
       <th>Engineer Comment</th>
       <th>Status</th>
-      <th>Logged By</th>
+      <th>Logged By User</th>
+      <th>Time Logged</th>
 
       <% @calls.each do |call| %>
 
@@ -36,7 +37,7 @@
           <td><%= call.engineer_comment %></td>
           <td><%= call.status %></td>
           <td><%= call.logged_by %></td>
-
+          <td><%= call.created_at.to_formatted_s(:long_ordinal) %></td>
         </tr>
 
 

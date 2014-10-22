@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924182656) do
+ActiveRecord::Schema.define(version: 20141022121050) do
 
-  create_table "calls", id: false, force: true do |t|
-    t.integer  "id",               null: false
+  create_table "calls", force: true do |t|
     t.string   "serial_number"
     t.text     "description"
     t.text     "engineer_comment"

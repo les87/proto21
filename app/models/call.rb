@@ -1,6 +1,6 @@
 class Call < ActiveRecord::Base
 
-  has_many :calls
+  self.primary_key= :id
   has_many :feedbacks
 
 end
